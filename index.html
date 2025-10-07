@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Algorithm Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Graph Algorithm Visualizer</h1>
+         <!---- <p>A tool for visualizing classic graph algorithms in action</p> --->
+        </header>
+
+        <main class="main-content">
+            <div class="panel controls-panel">
+                <section class="panel-section">
+                    <h2>1. Graph Setup</h2>
+                    <div class="input-group">
+                        <label for="vertices">Number of Nodes:</label>
+                        <input type="number" id="vertices" min="2" max="26" value="6">
+                    </div>
+                    <div class="input-group">
+                        <label for="edges">Number of Edges:</label>
+                        <input type="number" id="edges" min="1" max="50" value="7">
+                    </div>
+                    <button id="generate-inputs-btn">Define Edges</button>
+                </section>
+                
+                <section class="panel-section">
+                    <h3>Edge Information (Nodes A, B, C...)</h3>
+                    <div id="edge-inputs-container"></div>
+                    <button id="draw-graph-btn" disabled>Generate Graph</button>
+                </section>
+                
+                <section class="panel-section">
+                    <h2>2. Algorithm Selection</h2>
+                    <div class="input-group">
+                        <label for="algorithm-select">Algorithm:</label>
+                        <select id="algorithm-select">
+                            <option value="dijkstra">Dijkstra's Shortest Path</option>
+                            <option value="bellman-ford">Bellman-Ford Algorithm</option>
+                            <option value="kruskal">Kruskal's MST</option>
+                            <option value="prim">Prim's MST</option>
+                        </select>
+                    </div>
+                    <div id="start-node-group" class="input-group">
+                        <label for="start-node">Start Node:</label>
+                        <input type="text" id="start-node" value="A" maxlength="1">
+                    </div>
+                    <button id="run-algo-btn" disabled>Run Algorithm</button>
+                </section>
+            </div>
+
+            <div class="panel graph-panel">
+                <div id="algo-info-box" class="algo-info-box"></div>
+                
+                <div class="graph-container">
+                    <svg id="graph-svg"></svg>
+                </div>
+                <div class="visualization-controls">
+                    <div id="message-box" class="message-box">
+                        Welcome! Please set up your graph to begin.
+                    </div> 
+                    <div class="timeline-controls">
+                        <button id="reset-btn" disabled>Reset</button>
+                        <button id="prev-step-btn" disabled>Prev</button>
+                        <input type="range" id="timeline-slider" min="0" value="0" disabled>
+                        <button id="next-step-btn" disabled>Next </button>
+                        <span id="step-counter">Step 0 / 0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
