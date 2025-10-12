@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;5_00;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
-        /* This style adjusts the vertical alignment to reduce top space */
         body {
             display: flex;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding-top: 15vh; /* Pushes content down from the top */
+            padding-top: 0.5rem; 
         }
         .landing-container {
             max-width: 600px;
+
         }
         .landing-buttons {
             display: flex;
@@ -50,7 +50,6 @@
     <div class="landing-container">
         <header class="app-header">
             <h1>Graph Algorithm Visualizer</h1>
-            <p>A tool for visualizing and comparing classic graph algorithms.</p>
         </header>
         <div class="landing-buttons">
             <a href="/visualizer">Visualizer</a>

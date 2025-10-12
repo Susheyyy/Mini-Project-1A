@@ -31,7 +31,7 @@ body {
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
-    position: relative; /* This is required for positioning the new home link */
+    position: relative; 
 }
 
 .app-header {
@@ -79,8 +79,12 @@ body {
     overflow-y: auto;
 }
 
-.panel-section { margin-bottom: 2rem; }
-.panel-section:last-child { margin-bottom: 0; }
+.panel-section { 
+    margin-bottom: 2rem; 
+}
+.panel-section:last-child { 
+    margin-bottom: 0;
+ }
 .panel-section h2 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -113,7 +117,6 @@ input[type="number"], input[type="text"], select {
     font-size: 0.95rem;
 }
 
-/* This new block hides the spinners on number inputs */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -121,7 +124,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 input[type="number"] {
     appearance: none;
-    -moz-appearance: textfield; /* For Firefox */
+    -moz-appearance: textfield; 
 }
 
 
@@ -235,7 +238,6 @@ button:disabled {
     text-align: center;
 }
 
-/* SVG Styles */
 .node circle {
     stroke: rgba(15, 23, 42, 0.6);
     stroke-width: 2px;
@@ -263,7 +265,6 @@ button:disabled {
     font-weight: 600;
 }
 
-/* --- Styles for Comparison Page --- */
 .comparison-layout {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -296,7 +297,6 @@ button:disabled {
     font-weight: 600;
 }
 
-/* --- NEW Home Link --- */
 .home-link {
     position: absolute;
     top: 1.5rem;
@@ -324,30 +324,9 @@ button:disabled {
     transition: all 0.4s ease;
 }
 
-.home-link span {
-    position: absolute;
-    opacity: 0;
-    transform: translateX(25px);
-    transition: all 0.4s ease;
-    color: var(--primary-hover);
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
 
 .home-link:hover {
-    width: 140px; /* Expand width on hover */
-    border-radius: 22px;
     background-color: var(--primary-light);
     border-color: var(--primary-color);
 }
 
-.home-link:hover svg {
-    transform: translateX(-48px); /* Move icon to the left */
-    stroke: var(--primary-color);
-}
-
-.home-link:hover span {
-    opacity: 1; /* Show text on hover */
-    transform: translateX(8px); /* Move text into view */
-}
