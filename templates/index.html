@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Algorithm Visualizer - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;5_00;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* This style adjusts the vertical alignment to reduce top space */
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 15vh; /* Pushes content down from the top */
+        }
+        .landing-container {
+            max-width: 600px;
+        }
+        .landing-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .landing-buttons a {
+            display: block;
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .landing-buttons a:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <header class="app-header">
+            <h1>Graph Algorithm Visualizer</h1>
+            <p>A tool for visualizing and comparing classic graph algorithms.</p>
+        </header>
+        <div class="landing-buttons">
+            <a href="/visualizer">Visualizer</a>
+            <a href="/compare">Compare Algorithms</a>
+        </div>
+    </div>
+</body>
+</html>
+

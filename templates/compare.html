@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Graph Algorithms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+        <a href="/" class="home-link" title="Go to Home Page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Go to Home</span>
+        </a>
+        <header class="app-header">
+            <h1>Algorithm Comparison</h1>
+            <p>Run two algorithms on the same graph to compare their performance and steps.</p>
+        </header>
+
+        <div class="comparison-layout">
+            <div class="panel controls-panel-compare">
+                <section class="panel-section">
+                    <h2>1. Graph Setup</h2>
+                    <div class="input-group">
+                        <label for="vertices">Nodes:</label>
+                        <input type="number" id="vertices" min="2" max="26" value="6">
+                    </div>
+                    <div class="input-group">
+                        <label for="edges">Edges:</label>
+                        <input type="number" id="edges" min="1" max="50" value="7">
+                    </div>
+                    <button id="generate-inputs-btn">Define Edges</button>
+                </section>
+
+                <section class="panel-section">
+                    <h3>Edge Information</h3>
+                    <div id="edge-inputs-container"></div>
+                </section>
+                
+                <section class="panel-section">
+                    <h2>2. Algorithm Selection</h2>
+                    <div class="input-group">
+                        <label for="algo1-select">Algorithm 1:</label>
+                        <select id="algo1-select">
+                            <option value="dijkstra">Dijkstra's</option>
+                            <option value="bellman-ford">Bellman-Ford</option>
+                            <option value="kruskal" selected>Kruskal's MST</option>
+                            <option value="prim">Prim's MST</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="algo2-select">Algorithm 2:</label>
+                        <select id="algo2-select">
+                            <option value="dijkstra">Dijkstra's</option>
+                            <option value="bellman-ford">Bellman-Ford</option>
+                            <option value="kruskal">Kruskal's MST</option>
+                            <option value="prim" selected>Prim's MST</option>
+                        </select>
+                    </div>
+                    <div id="start-node-group" class="input-group" style="display: none;">
+                        <label for="start-node">Start Node:</label>
+                        <input type="text" id="start-node" value="A" maxlength="1">
+                    </div>
+                     <button id="compare-btn">Compare Algorithms</button>
+                </section>
+            </div>
+
+            <div class="comparison-results-container">
+                <div class="panel result-column">
+                    <h2 id="algo1-title">Algorithm 1</h2>
+                    <div class="result-meta">
+                        <span>Time: <strong id="algo1-time">N/A</strong></span>
+                    </div>
+                    <div class="graph-container">
+                        <svg id="graph-svg-1"></svg>
+                    </div>
+                    <div class="visualization-controls">
+                        <div id="message-box-1" class="message-box">Select algorithms and click Compare.</div>
+                        <div class="timeline-controls">
+                            <button id="prev-step-btn-1" disabled>⏪</button>
+                            <input type="range" id="timeline-slider-1" min="0" value="0" disabled>
+                            <button id="next-step-btn-1" disabled>⏩</button>
+                            <span id="step-counter-1">0/0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel result-column">
+                    <h2 id="algo2-title">Algorithm 2</h2>
+                     <div class="result-meta">
+                        <span>Time: <strong id="algo2-time">N/A</strong></span>
+                    </div>
+                    <div class="graph-container">
+                        <svg id="graph-svg-2"></svg>
+                    </div>
+                     <div class="visualization-controls">
+                        <div id="message-box-2" class="message-box">Select algorithms and click Compare.</div>
+                        <div class="timeline-controls">
+                            <button id="prev-step-btn-2" disabled>⏪</button>
+                            <input type="range" id="timeline-slider-2" min="0" value="0" disabled>
+                            <button id="next-step-btn-2" disabled>⏩</button>
+                            <span id="step-counter-2">0/0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/compare.js') }}"></script>
+</body>
+</html>
