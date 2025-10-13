@@ -188,9 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
-            if (!response.ok) throw new Error(`Server Error: ${response.statusText}`);
-
             const results = await response.json();
+            if (!response.ok) throw new Error(results.error || `Server Error: ${response.statusText}`);
             
             // Process results for Algo 1
             viz1.steps = results.algo1_result.steps;
@@ -247,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        viz.messageBox.textContent = stepData.message;
+        viz.messageBox.innerHTML = stepData.message; // Use innerHTML to render line breaks
         viz.timeline.value = viz.currentStep;
         viz.stepCounter.textContent = `${viz.currentStep}/${viz.steps.length - 1}`;
         viz.prevBtn.disabled = viz.currentStep === 0;

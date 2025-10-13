@@ -194,9 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(payload)
             });
             
-            if (!response.ok) throw new Error(`Server error: ${response.statusText}`);
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || `Server error: ${response.statusText}`);
             
-            visualizationSteps = await response.json();
+            visualizationSteps = result;
             if (visualizationSteps.length > 0) {
                 currentStep = 0;
                 setVisualizationControls(true);
@@ -232,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        messageBox.textContent = stepData.message;
+        messageBox.innerHTML = stepData.message; // Use innerHTML to render line breaks
         timelineSlider.value = currentStep;
         stepCounter.textContent = `${currentStep}/${visualizationSteps.length - 1}`;
         prevStepBtn.disabled = currentStep === 0;
