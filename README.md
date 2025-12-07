@@ -69,10 +69,6 @@ At any time, you can:
 
 <hr>
 
-<h3> Screenshots </h3>
-![Home Page](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/homepage.png)
-![Visualizer](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/visualizer.png)
-![Comparison Page](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/comparison.jpg)
 
 
 
