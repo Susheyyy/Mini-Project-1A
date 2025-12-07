@@ -23,21 +23,21 @@ The Graph Algorithm Visualizer is an interactive web-based tool built using Pyth
 <h3> Installations </h3>
 
 <h4>1. Clone the Repository </h4>
-<pre><code> git clone https://github.com/Susheyyy/Mini-Project-1A.git
+<pre><code>git clone https://github.com/Susheyyy/Mini-Project-1A.git
 cd Mini-Project-1A </code></pre>
 
 <h4> 2. Create a python environment (recommended) </h4>
-<pre><code> python -m venv venv </code></pre>
+<pre><code>python -m venv venv </code></pre>
 
 Activate the environment
 - Windows
-<pre><code> venv\Scripts\activate </code></pre>
+<pre><code>venv\Scripts\activate </code></pre>
 
 - macOS / Linux 
-<pre><code> source venv/bin/activate </code></pre>
+<pre><code>source venv/bin/activate </code></pre>
 
 <h4>3. Install Dependencies </h4>
-<pre><code> pip install -r requirements.txt </code></pre>
+<pre><code>pip install -r requirements.txt </code></pre>
 
 <h4>3. Install Dependencies </h4>
 <pre><code>python app.py</code></pre>
@@ -60,7 +60,7 @@ Activate the environment
 4. Click **Compare** to run both visualizations side-by-side.
 5. Compare execution time, cost, and traversal behavior.
 
-### Try a new graph
+#### Try a new graph
 At any time, you can:
 - Clear the graph  
 - Change inputs  
@@ -70,9 +70,10 @@ At any time, you can:
 <hr>
 
 <h3> Screenshots </h3>
-![Home Page](./assets/homepage.png)
-![Visualizer](./assets/visualizer.png)
-![Comparison Page](./assets/comparison.jpg)
+![Home Page](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/homepage.png)
+![Visualizer](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/visualizer.png)
+![Comparison Page](https://raw.githubusercontent.com/Susheyyy/Mini-Project-1A/main/assets/comparison.jpg)
+
 
 
 
